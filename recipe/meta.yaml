@@ -22,6 +22,7 @@ requirements:
     - gettext-tools
     - make
     - texinfo
+    - xz-tools
   host:
     - libtool
     - ncurses
