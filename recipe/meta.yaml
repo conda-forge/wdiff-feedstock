@@ -24,6 +24,7 @@ requirements:
     - texinfo
     - xz-tools
   host:
+    - libintl-devel         # [not linux]
     - libtool
     - ncurses
 
