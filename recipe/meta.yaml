@@ -10,15 +10,22 @@ source:
   sha256: 34ff698c870c87e6e47a838eeaaae729fa73349139fc8db12211d2a22b78af6b
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - autoconf
+    - automake
+    - gettext-tools
     - make
     - texinfo
+    - xz-tools
   host:
+    - libintl-devel         # [not linux]
+    - libtool
     - ncurses
 
 test:
@@ -28,7 +35,6 @@ test:
 about:
   home: https://www.gnu.org/software/wdiff/
   license: GPL-3.0-only
-  license_family: GPL
   license_file: COPYING
   summary: 'Word based diff'
   description: |
@@ -43,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - danielnachun
     - corneliusroemer
